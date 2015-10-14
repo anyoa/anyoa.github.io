@@ -206,6 +206,213 @@
           
           
             
+              <a class="post-title-link" href="/2015/10/14/Git-常用命令/" itemprop="url">
+                Git 常用命令
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-14T20:59:04+08:00" content="2015-10-14">
+            2015-10-14
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Git/" itemprop="url" rel="index">
+                  <span itemprop="name">Git</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/14/Git-常用命令/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/14/Git-常用命令/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>#创建分支：david$ git branch test</p>
+<p>#查看本地分支：</p>
+<pre><code>ZhangshunliMacBook-<span class="keyword">Pro</span>: git branch  
+<span class="comment">* develop_new  </span>
+  master  
+  <span class="keyword">test</span>  
+</code></pre><p>#切换分支</p>
+<pre><code>ZhangshunliMacBook-<span class="keyword">Pro</span>: git checkout <span class="keyword">test</span>  
+<span class="keyword">M</span>   .gitignore  
+Switched to branch '<span class="keyword">test</span>'  
+</code></pre><p>#删除本地分支</p>
+<pre><code>ZhangshunliMacBook-<span class="keyword">Pro</span>: git branch -<span class="keyword">d</span> <span class="keyword">test</span>  
+Deleted branch <span class="keyword">test</span> (was 1cc361e).  
+</code></pre><p>#将本地分支提交到远程分支</p>
+<pre><code><span class="attribute">ZhangshunliMacBook-Pro</span>: git push origin test  
+Total <span class="number">0</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)  
+To git<span class="variable">@github</span>.<span class="attribute">com</span>:anyoa/anyoa.github.io.git
+ * [new branch]      test -&gt; test  
+</code></pre><p>#查看远程分支</p>
+<pre><code>ZhangshunliMacBook-<span class="keyword">Pro</span>: git branch -a  
+<span class="comment">* develop_new  </span>
+  master  
+  <span class="keyword">test</span>  
+</code></pre><p>#删除远程分支</p>
+<pre><code>ZhangshunliMacBook-<span class="keyword">Pro</span>: git push origin --delete <span class="keyword">test</span>  
+To ssh:<span class="comment">//<span class="label">XXX/xxx/xxx-xx.git  </span></span>
+ - [deleted]         <span class="keyword">test</span>  
+</code></pre><p>#删除没有远程分支对用的本地分支</p>
+<pre><code>ZhangshunliMacBook-Pro: git push origin --<span class="keyword">delete</span> test  
+To ssh:<span class="comment">//git@<span class="doctag">XXX:</span>22222/<span class="label">xxx/xxx.git  </span></span>
+ - [deleted]         test
+
+ZhangshunliMacBook-Pro: git fetch -p  
+remote: Counting objects: <span class="number">12</span>, done.  
+remote: Compressing objects: <span class="number">100</span>% (<span class="number">8</span>/<span class="number">8</span>), done.  
+remote: Total <span class="number">12</span> (delta <span class="number">3</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)  
+Unpacking objects: <span class="number">100</span>% (<span class="number">12</span>/<span class="number">12</span>), done.  
+From <span class="comment">//git@<span class="doctag">XXX:</span>22222/<span class="label">xxx/xxx.git  </span></span>
+ * [<span class="keyword">new</span> branch]      feature_app_220_20151010 -&gt; origin/feature_app_220_20151010  
+   afe178c.<span class="number">.3568</span>dd8  feature_cps_track_data -&gt; origin/feature_cps_track_data  
+</code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/10/14/根据接口文档的输入、输出XML-JSON生成-Bean-POJO-实体类的工具/" itemprop="url">
+                根据接口文档的输入、输出XML/JSON生成(Bean,POJO)实体类的工具
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-14T20:56:30+08:00" content="2015-10-14">
+            2015-10-14
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Java/" itemprop="url" rel="index">
+                  <span itemprop="name">Java</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/14/根据接口文档的输入、输出XML-JSON生成-Bean-POJO-实体类的工具/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/14/根据接口文档的输入、输出XML-JSON生成-Bean-POJO-实体类的工具/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>相信很多朋友都遇到过做接口对接的时候要根据接口文档的输入输出写一大堆实体类，这类工作又繁琐，又没什么技术含量，偶然机会在发现了这样一个网站<a href="http://www.bejson.com/，上面提供了很多XML、JSON的工具，只需要将接口文档里的输入输出XML/JSON复制出来，然后把XML转换成JSON，最后JSON生成POJO实体类，把生成的代码COPY到项目中就可以了。" target="_blank" rel="external">http://www.bejson.com/，上面提供了很多XML、JSON的工具，只需要将接口文档里的输入输出XML/JSON复制出来，然后把XML转换成JSON，最后JSON生成POJO实体类，把生成的代码COPY到项目中就可以了。</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/13/IT运维周边/" itemprop="url">
                 IT运维周边
               </a>
@@ -309,21 +516,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
