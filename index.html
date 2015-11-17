@@ -206,6 +206,99 @@
           
           
             
+              <a class="post-title-link" href="/2015/11/17/Go初接触/" itemprop="url">
+                未命名
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-11-17T18:09:32+08:00" content="2015-11-17">
+            2015-11-17
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/11/17/Go初接触/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/17/Go初接触/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>title: Go初接触</p>
+<p>date: 2015-11-17 17:57:53</p>
+<h2 id="tags:Go">tags:Go</h2><h1 id="Go_初接触">Go 初接触</h1><p>最近风头正劲，好奇心的驱使下就尝试安装使用了一下，今天给大家说一下如何安装使用Go。</p>
+<h1 id="下载安装">下载安装</h1><p>直接上下载链接：<a href="https://golang.org/dl/" target="_blank" rel="external">https://golang.org/dl/</a> 选择对应的平台下载。下载完成后双击安装。</p>
+<p>在Linux下安装Go很简单，只需要两个步骤：下载、解压。</p>
+<p>首先下载Go的Linux编译好的包：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget <span class="string">https:</span><span class="comment">//storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz</span></span><br></pre></td></tr></table></figure>
+<p>然后解压就可以了：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -C /usr/local -xzf go1.<span class="number">4.2</span><span class="class">.linux-amd64</span><span class="class">.tar</span><span class="class">.gz</span></span><br></pre></td></tr></table></figure>
+<p>我们现在就可以测试:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/<span class="keyword">go</span>/bin/<span class="keyword">go</span></span><br></pre></td></tr></table></figure>
+<p>如果出现如下的界面，那么说明已经安装成功了。</p>
+<p><a href="https://github.com/astaxie/Go-in-Action/blob/master/ebook/zh/images/1.4.go.png" target="_blank" rel="external">!](https://github.com/astaxie/Go-in-Action/raw/master/ebook/zh/images/1.4.go.png)</a></p>
+<h1 id="环境变量设置">环境变量设置</h1><p>上面我们已经成功安装了Go，那么接下来我们配置一些Go开发需要的信息：<code>GOPATH</code>的设置(关于GOPATH的概念请到<a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/01.2.md" target="_blank" rel="external">https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/01.2.md)。</a>%E3%80%82)</p>
+<p>上面我们已经知道Vagrant启动之后，会默认把Vagrant这个目录挂载到系统的<code>/vagrant</code>目录，因此我们设置<code>GOPATH</code>到该目录：</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>cd</span><br><span class="line"><span class="variable">$ </span>mkdir /vagrant/gopath/</span><br><span class="line"><span class="variable">$ </span>vim .bashrc</span><br></pre></td></tr></table></figure>
+<p>切换到用户目录，打开bashrc进行设置，在最末尾增加如下两行：</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export <span class="constant">GOPATH</span>=<span class="regexp">/vagrant/gopath</span></span><br><span class="line">export <span class="constant">PATH</span>=<span class="variable">$PATH</span><span class="symbol">:/usr/local/go/bin</span><span class="symbol">:</span><span class="variable">$GOPATH</span>/bin</span><br></pre></td></tr></table></figure>
+<p>设置完毕之后，执行<code>source</code>命令使其生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> .bashrc</span><br></pre></td></tr></table></figure>
+<p>这个时候<code>GOPATH</code>设置成功，同时Go命令都已经加入了<code>PATH</code>，你在命令行下面执行如下：</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>go env</span><br></pre></td></tr></table></figure>
+<p>就会成功显示如下信息：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">GOARCH=<span class="value"><span class="string">"amd64"</span></span></span></span><br><span class="line"><span class="setting">GOBIN=<span class="value"><span class="string">""</span></span></span></span><br><span class="line"><span class="setting">GOCHAR=<span class="value"><span class="string">"6"</span></span></span></span><br><span class="line"><span class="setting">GOEXE=<span class="value"><span class="string">""</span></span></span></span><br><span class="line"><span class="setting">GOHOSTARCH=<span class="value"><span class="string">"amd64"</span></span></span></span><br><span class="line"><span class="setting">GOHOSTOS=<span class="value"><span class="string">"linux"</span></span></span></span><br><span class="line"><span class="setting">GOOS=<span class="value"><span class="string">"linux"</span></span></span></span><br><span class="line"><span class="setting">GOPATH=<span class="value"><span class="string">"/vagrant/gopath/"</span></span></span></span><br><span class="line"><span class="setting">GORACE=<span class="value"><span class="string">""</span></span></span></span><br><span class="line"><span class="setting">GOROOT=<span class="value"><span class="string">"/usr/local/go"</span></span></span></span><br><span class="line"><span class="setting">GOTOOLDIR=<span class="value"><span class="string">"/usr/local/go/pkg/tool/linux_amd64"</span></span></span></span><br><span class="line"><span class="setting">CC=<span class="value"><span class="string">"gcc"</span></span></span></span><br><span class="line"><span class="setting">GOGCCFLAGS=<span class="value"><span class="string">"-g -O2 -fPIC -m64 -pthread"</span></span></span></span><br><span class="line"><span class="setting">CGO_ENABLED=<span class="value"><span class="string">"1"</span></span></span></span><br></pre></td></tr></table></figure>
+<p>至此所有的Go环境配置完成，你和你的小伙伴们一定被如此简单的配置惊呆了吧。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/15/分享十五个NodeJs的应用场景/" itemprop="url">
                 分享十五个NodeJs的应用场景
               </a>
@@ -610,7 +703,7 @@ From <span class="comment">//git@<span class="doctag">XXX:</span>22222/<span cla
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
